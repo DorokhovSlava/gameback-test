@@ -4,25 +4,23 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "account_table")
+@Table(name = "account")
 public class Account {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue
-    @Column(name = "account_id")
-    private BigInteger accId;
-    @Column(name = "account_login")
-    private String accLogin;
-    @Column(name = "account_password")
-    private String accPassword;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "player_id")
-    private List<Player> playerList = new ArrayList<>();
+    @Column(name = "id")
+    private BigInteger id;
+    @Column(name = "login")
+    private String login;
+    @Column(name = "password")
+    private String password;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "id", unique = true,nullable = false)
+    private Player player;
 }

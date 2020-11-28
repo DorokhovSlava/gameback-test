@@ -2,11 +2,7 @@ package org.dorokhov.gamebackend.entities;
 
 
 import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigInteger;
 
 @Data
@@ -14,13 +10,9 @@ import java.math.BigInteger;
 @Table(name = "player")
 public class Player {
 
-    @javax.persistence.Id
-    @GeneratedValue
-    @Column(name = "player_id")
-    private BigInteger player_id;
-    @Column(name = "player_name")
-    private String player_name;
-
-
-
+    @Id
+    @Column(name = "id")
+    private BigInteger id;
+    @Column(name = "name")
+    private String name;
 }

@@ -14,7 +14,7 @@ public class PlayerController {
 
     private final PlayerRepository playerRepository;
     @Autowired
-    public PlayerController(PlayerRepository repository, PlayerRepository playerRepository) {
+    public PlayerController( PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
 
     }
