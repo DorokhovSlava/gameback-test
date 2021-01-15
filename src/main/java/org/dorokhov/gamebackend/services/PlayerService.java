@@ -8,7 +8,7 @@ import java.util.List;
 public interface PlayerService {
 
     Player addPlayer(Player player);
-    void deletePlayerById(BigInteger player_Id);
+    void deletePlayerById(BigInteger id);
     void updatePlayer(Player player);
     List<Player> gelAllPlayers();
 

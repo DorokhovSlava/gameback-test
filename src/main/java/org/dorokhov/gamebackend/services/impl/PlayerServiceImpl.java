@@ -21,18 +21,18 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player addPlayer(Player player) {
-        Player playerAdd = playerRepository.saveAndFlush(player);
-        return playerAdd;
+            playerRepository.saveAndFlush(player);
+        return player;
     }
 
     @Override
-    public void deletePlayerById(BigInteger player_Id) {
-        playerRepository.deleteById(player_Id);
+    public void deletePlayerById(BigInteger id) {
+        playerRepository.deleteById(id);
     }
 
     @Override
     public void updatePlayer(Player player) {
-        playerRepository.saveAndFlush(player);
+        playerRepository.save(player);
     }
 
     @Override

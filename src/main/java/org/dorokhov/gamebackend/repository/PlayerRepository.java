@@ -9,5 +9,4 @@ import java.math.BigInteger;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, BigInteger> {
 
-
 }
